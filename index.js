@@ -22,7 +22,10 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+const cors = require('cors');
+app.use(cors({
+  origin: ['http://localhost:5174', 'https://real-estate-app-xi-umber.vercel.app']
+}));
 
 // Use PORT from environment variables, default to 3000 if not provided
 const PORT = process.env.PORT || 3000;
