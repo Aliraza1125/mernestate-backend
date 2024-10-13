@@ -24,7 +24,9 @@ app.use(express.json());
 app.use(cookieParser());
 const cors = require('cors');
 app.use(cors({
-  origin: ['http://localhost:5174', 'https://real-estate-app-xi-umber.vercel.app']
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Use PORT from environment variables, default to 3000 if not provided
